@@ -49,9 +49,11 @@ h1 {
     grid-template-columns: 460px;
     grid-template-rows: 3fr 5fr 3fr;
 
-    position: relative; /* ? */
-    
-    background-color: darkgray; /* ? */
+    position: relative;
+    /* ? */
+
+    background-color: darkgray;
+    /* ? */
     text-transform: uppercase;
     color: whitesmoke;
 }
@@ -59,21 +61,26 @@ h1 {
 /* The card image */
 
 .card img {
-    grid-area: 1 / 1 / -1 / -1; /* ? */
+    grid-area: 1 / 1 / -1 / -1;
+    /* ? */
     transition: var(--duration-short) ease-out;
 }
 
 /* TODO: Make the image semi transparent when the card is hovered */
+.card:hover img {
+    opacity: .5;
+}
 
 /* The card title */
 
 .card h2 {
-    position: relative; /* ? */
+    position: relative;
+    /* ? */
     top: 0;
-    
+
     grid-area: 1 / 1;
     align-self: end;
-    text-align: end; 
+    text-align: end;
 
     margin: 0 1em;
 
@@ -82,7 +89,7 @@ h1 {
     transition: var(--duration-short) ease-out;
 }
 
-.card h2 span{
+.card h2 span {
     font-weight: 900;
 }
 
@@ -97,31 +104,37 @@ h1 {
 
 .toolbar {
     display: grid;
-    grid-auto-flow: column;  /* ?? */
-    grid-auto-columns: 50px; /* ?? */
+    grid-auto-flow: column;
+    /* ?? */
+    grid-auto-columns: 50px;
+    /* ?? */
     place-items: center;
 
     grid-area: 2 / 1;
     place-self: start;
 
-    position: absolute; /* ? */
-    right: 80px;        
-    
-    width: 0; /* ?? */
+    position: absolute;
+    /* ? */
+    right: 80px;
+
+    width: 0;
+    /* ?? */
     opacity: 0;
-    
+
     padding: 8px;
     background: linear-gradient(to right, whitesmoke, transparent);
     margin-block-start: 3px;
     color: darkgray;
-    
+
     transition: var(--duration-short) ease-out;
 }
+
 .card:hover .toolbar {
     transition-delay: var(--delay-short);
     opacity: 1;
     right: var(--margin-inline);
-    width: calc(var(--image-width) - var(--margin-inline) * 2); /* ?? */
+    width: calc(var(--image-width) - var(--margin-inline) * 2);
+    /* ?? */
 }
 
 /* TODO: Add styling to the toolbar icons */
