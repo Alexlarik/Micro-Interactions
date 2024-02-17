@@ -91,9 +91,30 @@ h1 {
 
 .card h2 span {
     font-weight: 900;
+
 }
 
 /* TODO: Make the title slide up 20px when the card is hovered. */
+h2:hover {
+    animation: up 5s;
+
+}
+
+@keyframes up {
+    100% {
+        transform:
+            translateY(-20px)
+    }
+}
+
+h2:hover::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    width: 200px;
+    height: 5px;
+    background-color: darkgray;
+}
 
 /* TODO: Use a pseudo element to give the title a 5px wide line under it.
    The line should run the full width of the card with 32px margins on both sides
